@@ -1,0 +1,26 @@
+{
+  "name": "generate-group-profiles",
+  "version": "1.0.0",
+  "description": "Generates each member of your groups profile.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hectcast508/generate-group-profiles.git"
+  },
+  "author": "Hector",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hectcast508/generate-group-profiles/issues"
+  },
+  "homepage": "https://github.com/Hectcast508/generate-group-profiles#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.0.3"
+  }
+}

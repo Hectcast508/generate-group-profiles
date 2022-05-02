@@ -56,7 +56,8 @@ const promptTeamQ = () => {
         internQ();
         break;
       default:
-        teamCreate();
+        writeToFile();
+
     }
   })
 }
@@ -120,3 +121,17 @@ const internQ = () => {
     promptTeamQ();
   });
 }
+
+function writeToFile(data) {
+  fs.writeFile('./dist/index.html', generatePage(data), err => {
+    if (err) throw err;
+    console.log('Index file complete!');
+  });
+};
+
+function init() {
+  managerQ()
+  
+}
+
+init();

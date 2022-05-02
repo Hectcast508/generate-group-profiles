@@ -45,7 +45,7 @@ const promptTeamQ = () => {
       name:'addEmployee',
       message:'Would you like to add employee to your team?',
       choices: ['Engineer', 'Intern', 'No more employees.']
-    },
+    }
   ])
   .then(userInput => {
     switch(userInput.addEmployee) {
@@ -59,4 +59,64 @@ const promptTeamQ = () => {
         teamCreate();
     }
   })
+}
+
+const engineerQ = () => {
+  return inquirer.prompt([
+    {
+      type:'input',
+      name:'name',
+      message:'What is the name of the engineer?'
+    },
+    {
+      type:'input',
+      name:'id',
+      message:'What is the employee ID number of the engineer?'
+    },
+    {
+      type:'input',
+      name:'email',
+      message:'What is the email of the engineer?'
+    },
+    {
+      type:'input',
+      name:'github',
+      message:'What is the GitHub username of the engineer?'
+    }
+  ])
+  .then(answers => {
+    const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+    teamArr.push(engineer);
+    promptTeamQ();
+  });
+}
+
+const internQ = () => {
+  return inquirer.prompt([
+    {
+      type:'input',
+      name:'name',
+      message:'What is the name of the intern?'
+    },
+    {
+      type:'input',
+      name:'id',
+      message:'What is the employee ID number of the intern?'
+    },
+    {
+      type:'input',
+      name:'email',
+      message:'What is the email address of the intern?'
+    },
+    {
+      type:'input',
+      name:'school',
+      message:'What school is the intern attending?'
+    }
+  ])
+  .then(answers => {
+    const intern = new Intern(answers.name, answers.id, answers.email, answers.github);
+    teamArr.push(intern);
+    promptTeamQ();
+  });
 }
